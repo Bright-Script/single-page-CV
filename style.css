@@ -1,0 +1,142 @@
+/* ===== Colors & fonts only (HTML is unchanged) ===== */
+
+:root {
+    --bg: #eef1f5;
+    --paper: #ffffff;
+    --text: #2b2f36;
+    --muted: #5b6472;
+    --accent: #1f4e79;
+    --line: #d5dbe3;
+
+    /* Local/system fonts only - nothing is downloaded */
+    --font-body: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-head: Georgia, "Times New Roman", serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;
+    padding: 1rem;
+}
+
+/* "CURRICULUM VITAE" label */
+.cv-label {
+    color: var(--muted);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Download button */
+.download-btn {
+    display: block;
+    margin: 0 auto 1rem;
+    padding: 0.6rem 1.4rem;
+    background: var(--accent);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: #163a5a;
+}
+
+/* The CV sheet */
+.main-page {
+    background: var(--paper);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: clamp(1.25rem, 5vw, 3rem);
+    border-top: 6px solid var(--accent);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Name + contact */
+.contact {
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1rem;
+}
+
+h1 {
+    color: var(--accent);
+    font-family: var(--font-head);
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    letter-spacing: 0.08em;
+    margin: 0 0 0.5rem;
+}
+
+.contact p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin: 0.15rem 0;
+    overflow-wrap: anywhere;
+}
+
+/* Section headings */
+h2 {
+    color: var(--accent);
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.25rem;
+    margin: 1.75rem 0 0.75rem;
+}
+
+h4 {
+    color: var(--text);
+    font-size: 1rem;
+    margin: 0.9rem 0 0.25rem;
+}
+
+p {
+    margin: 0.4rem 0;
+}
+
+b {
+    color: var(--accent);
+}
+
+i {
+    color: var(--muted);
+}
+
+li::marker {
+    color: var(--accent);
+}
+
+/* Small screens */
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Clean printing / PDF */
+@media print {
+    .download-btn,
+    .cv-label {
+        display: none;
+    }
+
+    body {
+        background: #fff;
+        padding: 0;
+    }
+
+    .main-page {
+        box-shadow: none;
+        max-width: none;
+    }
+}
